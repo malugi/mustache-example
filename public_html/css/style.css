@@ -1,0 +1,33 @@
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    border: 1px solid #afafaf;
+    border-radius: 8px;
+    padding: 30px 20px;
+    background: #fff;
+    min-height: 320px;
+    margin: 20px 20px 0 0;
+    font: 400 16px/18px 'Trebuchet MS';
+}
+
+.card__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.card__description {
+    margin-bottom: 15px;
+}
+
+.card__date {
+    color: #afafaf;
+    margin-top: auto;
+}
