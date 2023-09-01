@@ -16,35 +16,40 @@ $mustache = new Mustache_Engine(
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=NTR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <?
-    $cards = [
-        'commonTitle' => 'Общий<br>заголовок',
-        'title' => 'Второй общий заголовок',
-        'cards' => [
-            [
-                'title' => 'Карточка 1',
-                'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae doloribus iusto fugiat enim aut harum odit modi corrupti, magni voluptate hic provident pariatur minima. Excepturi doloremque labore sed dolore minus!',
-                'date' => '14 января 2021',
-                'image' => 'person.png'
-            ],
-            [
-                'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae doloribus iusto fugiat enim aut harum odit modi corrupti, magni voluptate hic provident pariatur minima. Excepturi doloremque labore sed dolore minus!',
-                'date' => '18 января 2021'
-            ],
-            [
-                'title' => 'Карточка 3',
-                'description' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae doloribus iusto fugiat enim aut harum odit modi corrupti, magni voluptate hic provident pariatur minima. Excepturi doloremque labore sed dolore minus!',
-                'date' => '20 января 2021'
-            ],
-        ]
-    ]
-    ?>
 
-    <? echo $mustache->render('cards-list', $cards) ?>
+    <header class="header">
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="cart">
+            <img src="images/icon/cart.svg" alt="cart">
+            <span class="cart__count">0</span>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="confirmation">
+                <? echo $mustache->render('confirmation', include($_SERVER['DOCUMENT_ROOT'] . '../corfirmation.php')) ?>
+            </section>
+
+            <section class="services">
+                <? echo $mustache->render('services-list', include($_SERVER['DOCUMENT_ROOT'] . '../index-cards.php')) ?>
+            </section>
+        </div>
+    </main>
+
+
+
 </body>
 
 </html>
