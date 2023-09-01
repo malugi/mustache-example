@@ -1,5 +1,5 @@
 <?php
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/illuminate/collections/helpers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 $mustache = new Mustache_Engine(
     [
@@ -39,11 +39,11 @@ $mustache = new Mustache_Engine(
     <main class="main">
         <div class="container">
             <section class="confirmation">
-                <? echo $mustache->render('confirmation', include($_SERVER['DOCUMENT_ROOT'] . '../corfirmation.php')) ?>
+                <? echo $mustache->render('confirmation', include($_SERVER['DOCUMENT_ROOT'] . '/corfirmation.php')) ?>
             </section>
 
-            <section class="services">
-                <? echo $mustache->render('services-list', include($_SERVER['DOCUMENT_ROOT'] . '../index-cards.php')) ?>
+
+            <? echo $mustache->render('section-services', include($_SERVER['DOCUMENT_ROOT'] . '/index-cards.php')) ?>
             </section>
         </div>
     </main>

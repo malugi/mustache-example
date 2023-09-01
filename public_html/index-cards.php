@@ -1,8 +1,7 @@
 <?
-
-$cards = [
+$arr = [
   'servicesTitle' => 'Some of my services',
-  'cards' => [
+  'cards' => collect([
     [
       'title' => 'Hollywood Laser Spectra Peel',
       'price' => 'from 30$',
@@ -23,7 +22,7 @@ $cards = [
       'price' => 'from 30$',
       'image' => 'card.png'
     ],
-  ]
+  ])
 ];
 
-return $cards;
+return $arr;
